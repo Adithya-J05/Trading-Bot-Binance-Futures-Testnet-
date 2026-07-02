@@ -95,3 +95,28 @@ python cli.py --symbol ETHUSDT --side SELL --type LIMIT --qty 0.05 --price 3500.
 
 ## ⚠️ Disclaimer
 This bot is strictly configured for the **Binance Testnet** for educational and testing purposes. Do not use this directly on the live exchange without comprehensive modifications and risk management.
+## 📊 Execution Receipts & Log Verification
+
+Below is an authentic execution trace captured during terminal runtime validation, illustrating both the **Rich UI visual feedback** and the corresponding asynchronous engine logging outputs.
+
+###  Terminal Output Layout (MARKET Order Example)
+When an order execution command is issued, the application instantly routes parameters into clear tracking interfaces:
+
+```text
++--------------------------- Order Intent Summary ----------------------------+
+| Processing Order Request...                                                 |
+| Pair: BTCUSDT | Side: BUY | Type: MARKET | Qty: 0.001 | Price: N/A          |
++-----------------------------------------------------------------------------+
+2026-07-02 21:03:58,431 [INFO] Binance Futures Testnet Client initialized successfully.
+2026-07-02 21:03:58,431 [INFO] Sending Request: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001}
+2026-07-02 21:03:59,116 [INFO] Received Response Success: {'orderId': 18511631139, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': '0JPT0cysZutQx2ykFp339h', 'price': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1783006442716}
+Execution Confirmation Receipts 
++------------------------------+
+| Metric Field | Value Outcome |
+|--------------+---------------|
+| Status       | NEW           |
+| Order ID     | 18511631139   |
+| Executed Qty | 0.0000        |
+| Avg Price    | N/A           |
++------------------------------+
+Success: Transaction successfully settled on Testnet engine.
